@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Random Password Generator</h1>
+        <p>Create a strong and secure password</p>
+
+        <div class="password-box">
+            <input
+                type="password"
+                id="password"
+                placeholder="Your password will appear here"
+                readonly
+            >
+
+            <button id="toggleBtn" type="button">Show</button>
+            <button id="copyBtn" type="button">Copy</button>
+        </div>
+
+        <div class="length-section">
+            <label for="length">
+                Password Length:
+                <span id="lengthValue">16</span>
+            </label>
+
+            <input
+                type="range"
+                id="length"
+                min="8"
+                max="64"
+                value="16"
+            >
+        </div>
+
+        <h3>Select Character Types</h3>
+
+        <div class="options">
+
+            <label>
+                <input type="checkbox" id="uppercase" checked>
+                Uppercase (A-Z)
+            </label>
+
+            <label>
+                <input type="checkbox" id="lowercase" checked>
+                Lowercase (a-z)
+            </label>
+
+            <label>
+                <input type="checkbox" id="numbers" checked>
+                Numbers (0-9)
+            </label>
+
+            <label>
+                <input type="checkbox" id="symbols" checked>
+                Special Characters (!@#$)
+            </label>
+
+        </div>
+
+        <label class="exclude-option">
+            <input type="checkbox" id="excludeSimilar">
+            Exclude similar characters (0, O, 1, l, I)
+        </label>
+
+        <p id="error"></p>
+
+        <div class="strength">
+            <p id="strengthText">Ready to generate</p>
+            <div class="strength-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="generateBtn" type="button">
+                Generate Password
+            </button>
+
+            <button id="regenerateBtn" type="button">
+                ↻
+            </button>
+        </div>
+
+        <p class="security">
+            Your password is generated locally in your browser.
+        </p>
+
+    </div>
+
+</body>
+</html>
